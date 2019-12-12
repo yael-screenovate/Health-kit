@@ -22,17 +22,18 @@ show () {
 }
 
   render() { 
-    if(this.props.isfirst) {
+
+    if(this.props.isfirst === true) {
       return(    
-        <div  class='q-speech-bubble'>
+        <div  class='q speech-bubble'>
         <p>{this.props.messege}</p>
        </div>
-       
       ); 
     }
-    if(!this.props.isfirst) {
+    else {
+
       return(    
-        <div class='a-speech-bubble'>
+        <div class='a speech-bubble'>
         <p>{this.props.messege}</p>
        </div>
   ); 

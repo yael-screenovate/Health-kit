@@ -18,6 +18,12 @@ class MessegeInput extends React.Component {
 //  this.props.setmessege(this.state.userstext)
 //  }
 
+demoReply = () => {
+  this.props.addsms(true, this.state.userstext)
+  setTimeout((this.props.addsms) , 3000, false ,this.state.userstext)
+}
+
+
 
  render(){
   return (
@@ -29,7 +35,7 @@ class MessegeInput extends React.Component {
         value={this.state.userstext}
         onChange={this.saveinput}
       />
-       <button class='button' onClick={() => {this.props.addsms(this.state.userstext)}}>>></button> 
+       <button class='button' onClick={this.demoReply}>>></button> 
     </div>
         );
     }

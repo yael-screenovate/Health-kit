@@ -23,7 +23,7 @@ class Contact extends React.Component {
               <div style={{background: '#'+ Math.floor(Math.random()*16777215).toString(16)}} class="circle" ></div>
               <div class="textWrapper" > 
                 <h5 class="name">{this.props.contact.name}</h5>
-                <p class="recentSms">this is the most recent sms</p>
+                <p class="recentSms">{this.props.contact.name}</p>
               </div>
             </button>
       </div>
