@@ -2,24 +2,28 @@
    display: flex;
    padding: 13px;
    width: 100%;
+   
   }
 
 .name {
-    
+    font-size: 2.3ch;
+    text-align: left;
+
   }
 
 .recentSms{
+  font-size: 1.8ch;
+  text-align: left;
   }
 
   .textWrapper{
       display:inline;
-      text-align: left;
-      margin: 5px;
+      margin: 7px;
 }
 
 .circle {
-    height: 50px;
-    width: 50px;
+    height: 55px;
+    width: 55px;
     border-radius: 50%;
     margin :7px;
   }

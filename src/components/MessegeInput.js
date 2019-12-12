@@ -20,7 +20,7 @@ class MessegeInput extends React.Component {
 
 demoReply = () => {
   this.props.addsms(true, this.state.userstext)
-  setTimeout((this.props.addsms) , 3000, false ,this.state.userstext)
+  setTimeout((this.props.addsms) , 1500, false ,this.state.userstext)
 }
 
 
@@ -31,7 +31,7 @@ demoReply = () => {
       <input
         class='textinput'
         type='text'
-        placeholder='Type your messege here.....'
+        placeholder="Type your messege here....."
         value={this.state.userstext}
         onChange={this.saveinput}
       />

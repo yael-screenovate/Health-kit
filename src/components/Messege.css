@@ -1,6 +1,22 @@
+.q-speec-bubble-wrapper {
+	margin: 3px 15px 3px auto;
+	overflow-anchor: none;
+
+
+}
+
+.a-speec-bubble-wrapper {
+	margin: 3px auto 3px 15px;
+	overflow-anchor: none;
+
+}
+
 .speech-bubble {
 	position: relative;
 	border-radius: .4em;
+	max-width: 100%;
+	padding: 2px 7px;
+
 }
 
 .speech-bubble:after {
@@ -9,41 +25,42 @@
 	top: 50%;
 	width: 0;
 	height: 0;
-	border: 23px solid transparent;
-	border-top: 0;
-	margin-top: -11.5px;
+	border: 14px solid transparent;
+	border-bottom: 0;
+	margin-top: -7px;
 }
 
 .q {
-	background: darkorchid;
-	margin: 2px 4px 2px auto;
+	background: rgb(150, 107, 172);
 	text-align: right;
 
 }
 
 .q:after {
 	right: 0;
-	border-left-color: darkorchid;
+	border-left-color: rgb(150, 107, 172);
 	border-right: 0;
-	margin-right: -18px;
+	margin-right: -14px;
 }
 
 .a {
 	background: lightslategray;
-	margin: 2px auto 2px 4px;
 	text-align: left;
-
-
 }
 
 .a:after {
 	left: 0;
 	border-right-color: lightslategray;
 	border-left: 0;
-	margin-left: -18px;
+	margin-left: -14px;
 }
 
 
 p {
-  margin: 8px;
-  word-wrap: break-word;}
+  word-wrap: break-word;
+  word-break: break-word;
+  max-width: 100%;
+  font-size: x-large;
+  margin-bottom: 0px;
+
+}

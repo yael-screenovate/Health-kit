@@ -18,16 +18,17 @@ class Conversation extends React.Component {
      if(!this.props.show) return null;
      return (
         <div class='container'>
-          <div class="contactWrapper">
+          <div class="currentcontactWrapper">
           <Contact contact={this.props.currentcontact} /> 
           </div>
-            <div class='conversation'>
+          <div class='conversation'>
             {            
             (this.props.conversation ||[]).map(sms => (
                 <Messege messege={sms.text} isfirst={sms.flag}> </Messege>
               ))
             }
-            </div>
+            <div id="anchor"></div>
+          </div>
             <MessegeInput /*setmessege={this.props.setmessege}*/ addsms={this.props.addsms}/>
         </div>
               ); 

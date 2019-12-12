@@ -52,17 +52,23 @@ class App extends React.Component {
     .then(res => res.json())
     .then((data) => {
       this.setState({ contacts: data })
-      data.map((contact) => (this.state.conversations[contact.id]= []
+      data.map((contact) => (this.state.conversations[contact.id]= [{"flag": "", "text": ""}]
        ))
     })
     //.catch(console.log)
   }
 
   render() {
+   
+   
+    
+    // let smsarraylen =  smsarray.length
+    // console.log(smsarraylen)
+
     return (
       <div class='App'>
 <ContactsList contacts={this.state.contacts} setCurrent={this.setCurrent}
-setobject={this.state.conversations} show={this.show}>
+show={this.show} smsarray={this.state.conversations}>
 </ContactsList>
 <Conversation
 currentcontact={this.state.currentcontact} /*setmessege={this.setmessege}*/
