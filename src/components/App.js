@@ -12,7 +12,6 @@ class App extends React.Component {
     contacts: [],
     conversations: {},
     show: false,
-    smsstate: "",
     currentcontact: {},
     // messege: "",  
   }
@@ -25,11 +24,23 @@ class App extends React.Component {
   // this.setState({messege: somedata})
   // }
  
-   AddItem = (data) => {
-     let tempconversations = {}
+   AddItem = (flag, data) => {
+    let tempconversations = {}
     tempconversations = Object.assign({}, this.state.conversations)
-    tempconversations[this.state.currentcontact.id] = tempconversations[this.state.currentcontact.id].push(data)
-    this.setState({conversation: tempconversations})
+    // tempconversations[this.state.currentcontact.id] = tempconversations[this.state.currentcontact.id].push(data)
+    tempconversations[this.state.currentcontact.id] =
+    tempconversations[this.state.currentcontact.id].concat({"flag": flag, "text" : data})
+    this.setState({conversations: tempconversations})
+
+    // tempconversations[this.state.currentcontact.id] =tempconversations[this.state.currentcontact.id].push({"true": data})
+    // this.setState({conversatsions: tempconversations})
+    // console.log("1",this.state.conversations)
+    // tempconversations = Object.assign({}, this.state.conversations)
+    // tempconversations[this.state.currentcontact.id] =tempconversations[this.state.currentcontact.id].push({"false": data})
+    // this.setState({conversations: tempconversations})
+    // // console.log(tempconversations[this.state.currentcontact.id])
+    // // console.log(tempconversations)
+    // console.log("2",this.state.conversations)
     }
 
     show = (booleanVAlue) => {
@@ -44,7 +55,7 @@ class App extends React.Component {
       data.map((contact) => (this.state.conversations[contact.id]= []
        ))
     })
-    .catch(console.log)
+    //.catch(console.log)
   }
 
   render() {
