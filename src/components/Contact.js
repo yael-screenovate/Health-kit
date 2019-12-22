@@ -9,13 +9,15 @@ class Contact extends React.Component {
    this.props.getCurrent(this.props.contact)
    this.props.show(true)
    }
-  
+
+   
 
   render() {
     return (
       <div >
             <button class="contactWrapper" onClick= {this.sendcurrent} >
-              <div style={{background: '#'+ Math.floor(Math.random()*16777215).toString(16)}} class="circle" ></div>
+              {/* <div style={{background: '#'+ Math.floor(Math.random()*16777215).toString(16)}} class="circle" ></div> */}
+               <div style={{backgroundColor: this.props.contact.color}} class="circle" ></div> 
               <div class="textWrapper" > 
                 <h5 class="name">{this.props.contact.name}</h5>
                 <p class="recentSms">{this.props.recentsms}</p>

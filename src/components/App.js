@@ -9,7 +9,7 @@ import { stat } from 'fs';
 class App extends React.Component {
 
   state = {
-    contacts: [],
+   contacts: [],
     conversations: {},
     show: false,
     currentcontact: {},
@@ -27,20 +27,20 @@ class App extends React.Component {
    AddItem = (flag, data) => {
     let tempconversations = {}
     tempconversations = Object.assign({}, this.state.conversations)
-    // tempconversations[this.state.currentcontact.id] = tempconversations[this.state.currentcontact.id].push(data)
     tempconversations[this.state.currentcontact.id] =
     tempconversations[this.state.currentcontact.id].concat({"flag": flag, "text" : data})
     this.setState({conversations: tempconversations})
-
-    // tempconversations[this.state.currentcontact.id] =tempconversations[this.state.currentcontact.id].push({"true": data})
-    // this.setState({conversatsions: tempconversations})
-    // console.log("1",this.state.conversations)
-    // tempconversations = Object.assign({}, this.state.conversations)
-    // tempconversations[this.state.currentcontact.id] =tempconversations[this.state.currentcontact.id].push({"false": data})
-    // this.setState({conversations: tempconversations})
-    // // console.log(tempconversations[this.state.currentcontact.id])
-    // // console.log(tempconversations)
-    // console.log("2",this.state.conversations)
+    if(flag===true)
+    {
+      let currentcontactIndex = this.state.contacts.indexOf(this.state.currentcontact)
+      let first = this.state.contacts.slice(0,currentcontactIndex)
+      let middle = this.state.contacts.slice(currentcontactIndex,currentcontactIndex+1)
+      let last = this.state.contacts.slice(currentcontactIndex+1)
+      let finaNewlarrary = [...middle, ...first, ...last]
+      currentcontactIndex = this.state.currentcontact.id
+       this.setState({contacts: finaNewlarrary})
+    }
+   
     }
 
     show = (booleanVAlue) => {
@@ -48,31 +48,34 @@ class App extends React.Component {
     }
     
   componentDidMount() {
+    let tempcontacts = []
+    let tempconversations = {}
+    tempcontacts = Object.assign({}, this.state.contacts)
+    tempconversations = Object.assign({}, this.state.conversations)
     fetch('http://jsonplaceholder.typicode.com/users')
     .then(res => res.json())
     .then((data) => {
-      this.setState({ contacts: data })
-      data.map((contact) => (this.state.conversations[contact.id]= [{"flag": "", "text": ""}]
-       ))
+      //this.setState({ contacts: data })
+    tempcontacts = data.map((contact) => {
+        tempconversations[contact.id]= [{"flag": "", "text": ""}];
+        contact.color =  "#"+((1<<24)*Math.random()|0).toString(16);
+        return contact;
+      });
+       this.setState({contacts : tempcontacts})
+       this.setState({conversations : tempconversations})
     })
-    //.catch(console.log)
   }
 
-  render() {
-   
-   
-    
-    // let smsarraylen =  smsarray.length
-    // console.log(smsarraylen)
 
+  render() {
     return (
       <div class='App'>
 <ContactsList contacts={this.state.contacts} setCurrent={this.setCurrent}
-show={this.show} smsarray={this.state.conversations}>
+show={this.show} smsarray={this.state.conversations} >
 </ContactsList>
 <Conversation
-currentcontact={this.state.currentcontact} /*setmessege={this.setmessege}*/
-/*messege={this.state.messege}*/ conversation={this.state.conversations[this.state.currentcontact.id]}
+currentcontact={this.state.currentcontact} 
+conversation={this.state.conversations[this.state.currentcontact.id]}
 addsms={this.AddItem} show={this.state.show}>
 </Conversation>
       </div>

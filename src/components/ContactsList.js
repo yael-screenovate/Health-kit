@@ -12,9 +12,7 @@ class ContactsList extends React.Component {
    //  console.log("this is the text i got:",text)
 //access the specfic id each time
     
-console.log("hi")
-console.log(id)
-console.log(this.props.smsarray[id]) 
+
 
 
 if(this.props.smsarray[id] == undefined ) return ""
@@ -36,7 +34,7 @@ if(this.props.smsarray[id] == undefined ) return ""
             <div className='containers'>
             {this.props.contacts.map((contact) => (
        <Contact contact={contact} key ={contact.id} getCurrent={this.props.setCurrent}
-       show={this.props.show} recentsms={this.settext(contact.id)} />
+       show={this.props.show} recentsms={this.settext(contact.id)} color={contact.color}/>
       ))
             }
             </div>
