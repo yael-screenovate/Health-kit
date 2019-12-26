@@ -5,14 +5,13 @@ import MessegeInput from './MessegeInput.js';
 import Contact from './Contact.js';
 import Messege from './Messege.js';
 import messege from './Messege';
-
-
+import {connect} from 'react-redux';
 
 class Conversation extends React.Component {
 
-  state = {
-    isfirst: true,
-  }
+  // state = {
+  //   isfirst: true,
+  // }
 
   render() {
      if(!this.props.show) return null;
@@ -22,14 +21,19 @@ class Conversation extends React.Component {
           <Contact contact={this.props.currentcontact} /> 
           </div>
           <div class='conversation'>
-            {            
-            (this.props.conversation ||[]).map(sms => (
+            { 
+            //conversation={this.props.conversations[this.props.currentcontact.id]}  
+            console.log("13",this.props.conversations),
+            console.log(this.props.currentcontact.id),
+            console.log(this.props.conversations[this.props.currentcontact.id]),
+            (this.props.conversations[this.props.currentcontact.id] ||[]).map(sms => (
                 <Messege messege={sms.text} isfirst={sms.flag}> </Messege>
               ))
             }
             <div id="anchor"></div>
           </div>
-            <MessegeInput /*setmessege={this.props.setmessege}*/ addsms={this.props.addsms}/>
+            <MessegeInput /*setmessege={this.props.setmessege} addsms={this.props.addsms}*/
+            />
         </div>
               ); 
           }
@@ -37,4 +41,14 @@ class Conversation extends React.Component {
  
 const element = <Conversation/ >;
 
-export default Conversation;
+const mapStateToProps = state => ({
+  // contacts: state.viewReducer.contacts,
+   conversations: state.conversationReducer.conversations,
+   show: state.viewReducer.show,
+   currentcontact: state.contactsReducer.currentcontact
+})
+
+
+// export default Conversation;
+export default connect(mapStateToProps,{})(Conversation);
+

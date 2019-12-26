@@ -1,51 +1,55 @@
 import React, { Component } from 'react';
-// import data from './contacts.json';
-// import logo, { ReactComponent } from '../../src/';
 import './MessegeInput.css';
-
+import {saveSingleSms, demoReply} from '../store/actions'
+import {connect} from 'react-redux';
 
 class MessegeInput extends React.Component {
   
-  state = {
-    userstext: ""
-  }
+  // state = {
+  //   userstext: ""
+  // }
 
   saveinput = (event) => {
-    this.setState({ userstext: event.target.value });
+   // this.setState({ userstext: event.target.value });
+   this.props.saveSingleSms(event.target.value)
   }
 
-demoReply = () => {
-  this.props.addsms(true, this.state.userstext)
-  setTimeout((this.props.addsms) , 1500, false ,this.state.userstext)
-  this.setState({userstext: ""})
-}
+// demoReply = () => {
+//   this.props.addsms(true, this.state.userstext)
+//   setTimeout((this.props.addsms) , 1500, false ,this.state.userstext)
+//   this.setState({userstext: ""})
+// }
 
 handleKeyPress = (e) => {
   if (e.key === 'Enter') 
-    this.demoReply()
+    this.props.demoReply()
   }
 
 
-
-
  render(){
+   console.log("97", this.props.userstext)
   return (
     <div class='inputWrapper'>
       <input
         class='textinput'
         type='text'
         placeholder="Type your messege here....."
-        value={this.state.userstext}
+        value={this.props.userstext}
         onChange={this.saveinput}
         onKeyPress={this.handleKeyPress}
       />
-       <button class='button' onClick={this.demoReply}>>></button> 
+       <button class='button' onClick={this.props.demoReply}>>></button> 
     </div>
         );
     }
 }
- 
 
 const element = < MessegeInput/ >;
 
-export default MessegeInput;
+const mapStateToProps = state => ({
+  userstext: state.conversationReducer.userstext
+})
+
+export default connect(mapStateToProps, {saveSingleSms, demoReply} )(MessegeInput);
+  
+

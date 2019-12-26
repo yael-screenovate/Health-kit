@@ -5,21 +5,21 @@ import './Messege.css';
 
 class messege extends React.Component{
   
-  state = {
-    hidden : "",
-  }
+  // state = {
+  //   hidden : "",
+  // }
 
-  componentWillMount () {
-    var that = this;
-  setTimeout(function() {
-  that.show();
-},
-that.props.wait);
-}
+//   componentWillMount () {
+//     var that = this;
+//   setTimeout(function() {
+//   that.show();
+// },
+// that.props.wait);
+// }
 
-show () {
-  this.setState({hidden : ""});
-}
+// show () {
+//   this.setState({hidden : ""});
+// }
 
   render() { 
     if(this.props.messege == "") return ""
@@ -43,11 +43,8 @@ show () {
        </div>
   ); 
     }
-  
     }
   }
-
-
 
 const element = < messege/ >;
 
