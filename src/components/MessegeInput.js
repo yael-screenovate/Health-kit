@@ -21,13 +21,17 @@ class MessegeInput extends React.Component {
 // }
 
 handleKeyPress = (e) => {
-  if (e.key === 'Enter') 
-    this.props.demoReply()
+  if (e.key === 'Enter')
+  this.Reply()
+    
+  }
+
+  Reply = () => {
+    this.props.demoReply(this.props.currentcontact.id)
   }
 
 
  render(){
-   console.log("97", this.props.userstext)
   return (
     <div class='inputWrapper'>
       <input
@@ -38,7 +42,7 @@ handleKeyPress = (e) => {
         onChange={this.saveinput}
         onKeyPress={this.handleKeyPress}
       />
-       <button class='button' onClick={this.props.demoReply}>>></button> 
+       <button class='button' onClick={this.Reply}>>></button> 
     </div>
         );
     }
@@ -47,9 +51,9 @@ handleKeyPress = (e) => {
 const element = < MessegeInput/ >;
 
 const mapStateToProps = state => ({
+  currentcontact: state.contactsReducer.currentcontact,
   userstext: state.conversationReducer.userstext
 })
 
 export default connect(mapStateToProps, {saveSingleSms, demoReply} )(MessegeInput);
   
-

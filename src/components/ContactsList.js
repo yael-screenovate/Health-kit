@@ -2,7 +2,6 @@ import React from 'react';
 import  './ContactsList.css';
 import  './MessegeInput.js';
 import Contact from './Contact.js';
-import MessegeInput from './MessegeInput.js';
 import {connect} from 'react-redux';
 
 class ContactsList extends React.Component {
@@ -19,8 +18,6 @@ class ContactsList extends React.Component {
             {this.props.contacts.map((contact) => (
        <Contact
        contact={contact}
-       //key ={contact.id}
-       //show={this.props.show}
        recentsms={this.settext(contact.id)}
        color={contact.color}
        />
@@ -34,9 +31,8 @@ class ContactsList extends React.Component {
 const mapStateToProps = state => ({
    contacts: state.viewReducer.contacts,
    conversations: state.conversationReducer.conversations,
-  // show: state.viewReducer.show,
-  // currentcontact: state.contactsReducer.currentcontact
 })
+
 const element = < ContactsList/ >;
 
 export default connect(mapStateToProps, {})(ContactsList);

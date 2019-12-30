@@ -1,8 +1,6 @@
 .q-speec-bubble-wrapper {
 	margin: 3px 15px 3px auto;
 	overflow-anchor: none;
-
-
 }
 
 .a-speec-bubble-wrapper {
@@ -16,7 +14,9 @@
 	border-radius: .4em;
 	max-width: 100%;
 	padding: 2px 7px;
+	text-align: left;
 
+	
 }
 
 .speech-bubble:after {
@@ -31,26 +31,23 @@
 }
 
 .q {
-	background: rgb(150, 107, 172);
-	text-align: right;
-
+	background: rgb(107, 187, 147);
 }
 
 .q:after {
 	right: 0;
-	border-left-color: rgb(150, 107, 172);
+	border-left-color: rgb(107, 187, 147);
 	border-right: 0;
 	margin-right: -14px;
 }
 
 .a {
-	background: lightslategray;
-	text-align: left;
+	background: rgb(195, 207, 199);
 }
 
 .a:after {
 	left: 0;
-	border-right-color: lightslategray;
+	border-right-color: rgb(195, 207, 199);
 	border-left: 0;
 	margin-left: -14px;
 }
@@ -61,6 +58,5 @@ p {
   word-break: break-word;
   max-width: 100%;
   font-size: x-large;
-  margin-bottom: 0px;
-
-}
+  font-family: "Gill Sans", sans-serif;
+  margin: 1px 5px 2px;}

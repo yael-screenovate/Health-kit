@@ -25,15 +25,9 @@ export const initialViewState = {
     show: false,
 }
 
-
-
 export const viewReducer = function(state = initialState.viewReducer, action) {
     switch(action.type) {
         case LOAD_CONTACTS:
-                console.log("4",{
-                    ...state,
-                    contacts: action.data
-                })
             return {
                 ...state,
                 contacts: action.data
@@ -72,32 +66,18 @@ export const contactsReducer = function(currentcontact = initialState.contactsRe
 export const conversationReducer = function( state= initialConversationState, action) {
     switch(action.type) {
         case LOAD_CONVERSATIONS:
-                console.log("6", state,action)
             return {
                 ...state,
                 conversations: action.data
                 }
                 break;
         case ADD_SMS_ITEM:
-            console.log("26",action)
             return {
                 ...state,
                 conversations: action.data
             }
-                // return Object.assign({}, state, {
-                //     conversations: [
-                //       ...state.conversations,
-                //       {
-                //         text: action.text,
-                //         completed: false
-                //       }
-                //     ]
-                //   })
-                  
-                //     }
                 break;
         case SAVE_SINGLE_SMS:
-                console.log("21", action)
             return {
                 ...state,
                 userstext: action.data
@@ -113,5 +93,3 @@ export const conversationReducer = function( state= initialConversationState, ac
       return state;
 }
 }
-
-//export default initialState

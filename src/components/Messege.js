@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-// import data from './contacts.json';
-// import logo, { ReactComponent } from '../../src/';
 import './Messege.css';
 
 class messege extends React.Component{
@@ -30,11 +28,9 @@ class messege extends React.Component{
             <p>{this.props.messege}</p>
           </div>
         </div>    
-       
       ); 
     }
     else {
-
       return(    
         <div class="a-speec-bubble-wrapper">
           <div class='a speech-bubble'>
