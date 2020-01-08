@@ -6,7 +6,6 @@
 .a-speec-bubble-wrapper {
 	margin: 3px auto 3px 15px;
 	overflow-anchor: none;
-
 }
 
 .speech-bubble {
@@ -15,8 +14,6 @@
 	max-width: 100%;
 	padding: 2px 7px;
 	text-align: left;
-
-	
 }
 
 .speech-bubble:after {
@@ -52,11 +49,11 @@
 	margin-left: -14px;
 }
 
-
 p {
   word-wrap: break-word;
   word-break: break-word;
   max-width: 100%;
   font-size: x-large;
   font-family: "Gill Sans", sans-serif;
-  margin: 1px 5px 2px;}
+  margin: 1px 5px 2px;
+}

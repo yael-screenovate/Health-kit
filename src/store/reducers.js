@@ -15,16 +15,6 @@ export const initialState = {
     }
 }
 
-export const initialConversationState = {
-    conversations: {},
-    userstext: ""
-}
-
-export const initialViewState = {
-    contacts: [],
-    show: false,
-}
-
 export const viewReducer = function(state = initialState.viewReducer, action) {
     switch(action.type) {
         case LOAD_CONTACTS:
@@ -63,7 +53,7 @@ export const contactsReducer = function(currentcontact = initialState.contactsRe
     }
 }
 
-export const conversationReducer = function( state= initialConversationState, action) {
+export const conversationReducer = function( state = initialState.conversationReducer, action) {
     switch(action.type) {
         case LOAD_CONVERSATIONS:
             return {

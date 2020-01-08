@@ -82,7 +82,6 @@ export const demoReply = (contactId) => (dispatch, getState) => {
     }
 
 export const addSmsItem = (flag, data, contactId) => (dispatch, getState) => {
-    console.log(contactId)
     let tempconversations = {}
     tempconversations = Object.assign({}, getState().conversationReducer.conversations)
     tempconversations[contactId] =

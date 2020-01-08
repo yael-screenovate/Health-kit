@@ -14,25 +14,21 @@ class Conversation extends React.Component {
   render() {
      if(!this.props.show) return null;
      return (
+     
         <div class='container'>
           <div class="currentcontactWrapper">
-          <Contact contact={this.props.currentcontact} /> 
+            <Contact disabled contact={this.props.currentcontact} /> 
           </div>
           <div className='blur'/>
           <div class='conversation'>
-       
-           
             { 
             (this.props.conversations[this.props.currentcontact.id] ||[]).map(sms => (
                 <Messege messege={sms.text} isfirst={sms.flag}></Messege>
               ))
             }
             <div id="anchor"></div>
-           
-            
-           
           </div>
-            <MessegeInput/>
+          <MessegeInput/>
         </div>
               ); 
           }
@@ -48,4 +44,3 @@ const mapStateToProps = state => ({
 
 
 export default connect(mapStateToProps,{})(Conversation);
-

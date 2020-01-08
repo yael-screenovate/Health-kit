@@ -43,6 +43,7 @@ class App extends React.Component {
     
    componentDidMount() {
      this.props.loadContactsAndConversations();
+     document.title = 'Chat here!';
   //   let tempcontacts = []
   //   let tempconversations = {}
   //   tempcontacts = Object.assign({}, this.state.contacts)
@@ -63,6 +64,9 @@ class App extends React.Component {
   render() {
     return (
      <div className='App'>
+        {/* <Helmet>
+      <title>works?</title>
+       </Helmet> */}
 <ContactsList></ContactsList>
 <Conversation></Conversation>
 {/* <img src="/Users/yael/chat/src/components/7305.jpg"></img> */}

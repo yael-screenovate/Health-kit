@@ -37,7 +37,7 @@ handleKeyPress = (e) => {
       <input
         class='textinput'
         type='text'
-        placeholder="Type your messege here....."
+        placeholder=" Type your messege here....."
         value={this.props.userstext}
         onChange={this.saveinput}
         onKeyPress={this.handleKeyPress}
