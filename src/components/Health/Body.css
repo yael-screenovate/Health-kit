@@ -1,0 +1,52 @@
+.Body {
+    background-color: #232b2b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    height: calc(100% - 350px);
+    border-top: gray 0.3px solid;
+    border-right: gray 0.3px solid;
+    position: relative;
+    padding: 10px;
+}
+.man {
+    position: absolute;
+    left: 80px;
+}
+.Height {
+    color :limegreen;
+    font-family: "Consolas", Monospaced;
+    font-size: 15px;
+    font-weight: lighter;
+    width: 100%;
+    align-self: flex-start;
+}
+.Weight{
+    color :limegreen;
+    font-family: "Consolas", Monospaced;
+    font-size: 15px;
+    font-weight: lighter;
+    width: 100%;
+    align-self: flex-end;
+    margin-left: 35px;
+}
+.Bodyfat{
+    color :limegreen;
+    font-family: "Consolas", Monospaced;
+    font-size: 15px;
+    font-weight: lighter;
+    align-self: flex-start;
+}
+.arrowup{
+    position: absolute;
+    left: 60px;
+    top: 25%;
+    transform: rotate(250deg);
+}
+.arrowdown{
+    position: absolute;
+    left: 180px;
+    bottom: 25%;
+    transform: rotate(90deg);
+}

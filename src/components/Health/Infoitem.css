@@ -1,0 +1,22 @@
+.infoItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+}
+
+.title {
+    color: orangered;
+    font-family: "Consolas", Monospaced;
+    font-size: 13px;
+    font-weight: lighter;
+    max-height: 20%;
+}
+
+.subtitle {
+    font-family: "Consolas", Monospaced;
+    color :gray;
+    font-size: 23px;
+    font-weight: 600;
+}

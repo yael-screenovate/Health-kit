@@ -1,0 +1,38 @@
+.selfcare {
+    background-color: #232b2b;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 350px;
+    height: calc(100% - 350px);
+    border-top: gray 0.3px solid;
+    border-right: gray 0.3px solid;
+    border-left: gray 0.3px solid;
+}
+
+.selfcare p {
+    color :yellow;
+    font-family: "Consolas", Monospaced;
+    font-size: 20px;
+    font-weight: lighter;
+    width: 100%;
+}
+
+.selfcare > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    height: 38px;
+}
+
+.IconWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin: 0 5px 0 5px;
+}
+
+.IconWrapper svg {
+    margin: 0 5px 0 5px;
+}

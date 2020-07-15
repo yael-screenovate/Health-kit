@@ -1,0 +1,10 @@
+.Nutrition {
+    background-color: #232b2b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 290px;
+    border-top: rgb(5, 230, 218) 7px solid;
+    border-right: rgb(5, 230, 218) 7px solid;
+    border-left: gray 0.3px solid;
+}
