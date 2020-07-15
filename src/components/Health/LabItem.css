@@ -1,0 +1,58 @@
+.LabItem {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 14px;
+}
+
+.LabItem p{
+  color: rgb(45, 9, 250);
+  font-family: "Consolas", Monospaced;
+  font-size: 18px;
+  font-weight: lighter;
+  margin-bottom: 0;
+}
+
+.valueWrapper p{
+    color: gray;
+    font-family: "Consolas", Monospaced;
+    font-size: 13px;
+    font-weight: lighter;
+  }
+
+.valueWrapper {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.slider {
+    -webkit-appearance: none;
+    height: 7px;
+    border-radius: 5px;  
+    background-color: rgb(45, 9, 250);
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  input[type=range]::-webkit-slider-runnable-track {
+    background: #2d09fa;
+    border-radius: 3.6px;
+    width: 100%;
+    height: 11.8px;
+  }
+  input[type=range] {
+    width: 80%;
+    margin: 7px 0;
+    -webkit-appearance: none;
+  }
+ 
+  input[type=range]::-webkit-slider-thumb {
+    margin-top: -8.1px;
+    width: 4px;
+    height: 28px;
+    background: #1c61be;
+    border-radius: 12px;
+    -webkit-appearance: none;
+  }

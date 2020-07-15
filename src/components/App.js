@@ -1,77 +1,40 @@
 import React from 'react';
-// import logo, { ReactComponent } from './src/logo.svg';
 import  './App.css';
-import ContactsList from './ContactsList.js';
-import Contact from './Contact.js';
-import Conversation from './Conversation.js';
-import { stat } from 'fs';
+import Footer from '../components/Health/Footer.js'
+import Activity from '../components/Health/Activity.js'
+import Indicators from '../components/Health/Indicators.js'
+import SelfCare from '../components/Health/SelfCare.js'
+import Body from '../components/Health/Body.js'
+import Nutrition from '../components/Health/Nutrition.js'
+import Lab from '../components/Health/Lab.js'
+import {connect} from 'react-redux';
 
 class App extends React.Component {
-
-  state = {
-    contacts: [],
-    conversations: {},
-    show: false,
-    currentcontact: {},
-    // messege: "",  
-  }
-
-  setCurrent = (somedata) => {
-    this.setState({currentcontact: somedata})
-  }
-
-  // setmessege = (somedata) => {
-  // this.setState({messege: somedata})
-  // }
- 
-   AddItem = (flag, data) => {
-    let tempconversations = {}
-    tempconversations = Object.assign({}, this.state.conversations)
-    // tempconversations[this.state.currentcontact.id] = tempconversations[this.state.currentcontact.id].push(data)
-    tempconversations[this.state.currentcontact.id] =
-    tempconversations[this.state.currentcontact.id].concat({"flag": flag, "text" : data})
-    this.setState({conversations: tempconversations})
-
-    // tempconversations[this.state.currentcontact.id] =tempconversations[this.state.currentcontact.id].push({"true": data})
-    // this.setState({conversatsions: tempconversations})
-    // console.log("1",this.state.conversations)
-    // tempconversations = Object.assign({}, this.state.conversations)
-    // tempconversations[this.state.currentcontact.id] =tempconversations[this.state.currentcontact.id].push({"false": data})
-    // this.setState({conversations: tempconversations})
-    // // console.log(tempconversations[this.state.currentcontact.id])
-    // // console.log(tempconversations)
-    // console.log("2",this.state.conversations)
-    }
-
-    show = (booleanVAlue) => {
-      this.setState({show: booleanVAlue})
-    }
-    
-  componentDidMount() {
-    fetch('http://jsonplaceholder.typicode.com/users')
-    .then(res => res.json())
-    .then((data) => {
-      this.setState({ contacts: data })
-      data.map((contact) => (this.state.conversations[contact.id]= []
-       ))
-    })
-    //.catch(console.log)
+  
+   componentDidMount() {
+     document.title = 'Health Dashboard';
   }
 
   render() {
     return (
-      <div class='App'>
-<ContactsList contacts={this.state.contacts} setCurrent={this.setCurrent}
-setobject={this.state.conversations} show={this.show}>
-</ContactsList>
-<Conversation
-currentcontact={this.state.currentcontact} /*setmessege={this.setmessege}*/
-/*messege={this.state.messege}*/ conversation={this.state.conversations[this.state.currentcontact.id]}
-addsms={this.AddItem} show={this.state.show}>
-</Conversation>
+     <div className='App'>
+       <div className='wrapper'>
+         <Activity/>
+         <div className='middlewrapper'>
+          <Indicators/>
+          <Body/>
+         </div>
+         <div className='middlewrapper'>
+          <Lab/>
+          <SelfCare/>
+         </div>
+         <Nutrition/>
       </div>
+      <div><Footer/></div>
+    </div>
     );
   }
 }
 
-export default App;
+export default connect(null, {} )(App);
+

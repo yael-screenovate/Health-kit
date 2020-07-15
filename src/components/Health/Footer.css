@@ -1,0 +1,12 @@
+.footer {
+    background-color: #232b2b;
+    display: flex;
+    width: 100%;
+    height: 70px;
+    align-self: flex-end;
+    justify-content: space-around;
+    border-left: orangered 7px solid;
+    border-right: orangered 7px solid;
+    border-bottom: orangered 7px solid;
+    border-top: gray 0.3px solid;
+}

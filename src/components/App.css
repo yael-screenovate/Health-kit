@@ -1,9 +1,48 @@
 .App {
   display: flex;
-  justify-content: center;
-  flex-direction: row;
+  flex-direction: column;
   height: 100%;
   width: 100%;
   box-sizing: border-box;
-  
+  background-size: contain;
+  background-size: 50% 100%;
+  overflow: hidden;
+}
+
+.middlewrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+  background-size: contain;
+  background-size: 50% 100%;
+  overflow: hidden;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+.Welcometext {
+  font-size: 0.7cm; 
+  font-family: "Consolas", Monospaced;
+  margin: 10% auto 0;
+}
+
+.wrapper {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  background-size: contain;
+  background-size: 50% 100%;
+  overflow: hidden;
 }
